@@ -10,11 +10,4 @@ namespace CodeJam_Solutions.Util
     {
 
     }
-
-    public enum SolutionMode
-    {
-        Small,
-        Large,
-        Both
-    }
 }

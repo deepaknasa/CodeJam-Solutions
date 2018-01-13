@@ -11,7 +11,7 @@ namespace CodeJam_Solutions
     {
         static void Main(string[] args)
         {
-            ASavingtheUniverse aSavingtheUniverse = new ASavingtheUniverse(Util.SolutionMode.Both);
+            ASavingtheUniverse aSavingtheUniverse = new ASavingtheUniverse(Base.SolutionMode.Both);
 
             Console.ReadLine();
         }

@@ -48,4 +48,11 @@ namespace CodeJam_Solutions.Base
             return Path.Combine(paths.ToArray());
         }
     }
+
+    public enum SolutionMode
+    {
+        Small,
+        Large,
+        Both
+    }
 }

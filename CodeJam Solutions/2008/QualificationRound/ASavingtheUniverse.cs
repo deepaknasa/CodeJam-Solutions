@@ -1,5 +1,4 @@
 ﻿using CodeJam_Solutions.Base;
-using CodeJam_Solutions.Util;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -31,16 +30,13 @@ namespace CodeJam_Solutions._2008.QualificationRound
     ///2 ≤ S ≤ 100
     ///0 ≤ Q ≤ 1000    
     /// </summary>
-    public class ASavingtheUniverse: Base.BaseProblem
+    public class ASavingtheUniverse : Base.BaseProblem
     {
         private class EachCase
         {
-            public EachCase()
-            {
-                Servers = new Dictionary<string, short>();
-            }
+            public EachCase() { }
             public IEnumerable<string> Queries;
-            public Dictionary<string, short> Servers { get; set; }
+            public Int16 ServersCount;
 
             public void ProcessCase()
             {
@@ -55,7 +51,7 @@ namespace CodeJam_Solutions._2008.QualificationRound
                 {
                     if (!querySet.Contains(q))
                     {
-                        if (querySet.Count == Servers.Count() - 1)
+                        if (querySet.Count == ServersCount - 1)
                         {
                             Output++;
                             querySet = new HashSet<string>();
@@ -70,7 +66,8 @@ namespace CodeJam_Solutions._2008.QualificationRound
 
         List<EachCase> puzzleCases;
 
-        protected ASavingtheUniverse() {
+        protected ASavingtheUniverse()
+        {
             SolvePuzzle(smallInputFileName, smallOutputFileName);
             SolvePuzzle(largeInputFileName, largeOutputFileName);
         }
@@ -129,9 +126,8 @@ namespace CodeJam_Solutions._2008.QualificationRound
                 for (int i = 0; i < NCases; i++)
                 {
                     var newCase = new EachCase();
-                    Int16 serversCount = Convert.ToInt16(sr.ReadLine());
-                    newCase.Servers = getLines(sr, serversCount).ToDictionary(q => q, s => default(short));
-
+                    newCase.ServersCount = Convert.ToInt16(sr.ReadLine());
+                    getLines(sr, newCase.ServersCount);  //ignore server names as it will not be required in the solution.
 
                     Int16 queriesCount = Convert.ToInt16(sr.ReadLine());
                     newCase.Queries = getLines(sr, queriesCount);
