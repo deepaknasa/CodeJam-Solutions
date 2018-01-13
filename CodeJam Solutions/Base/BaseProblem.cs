@@ -18,12 +18,37 @@ namespace CodeJam_Solutions.Base
 
         protected string relativePath;
 
-        protected void SolvePuzzle(string inputFileName, string outputFileName)
+        public BaseProblem()
         {
-            LoadInputData(inputFileName, outputFileName);
+            SolvePuzzle(smallInputFileName, smallOutputFileName);
+            SolvePuzzle(largeInputFileName, largeOutputFileName);
         }
 
-        protected virtual void LoadInputData(string inputFileName, string outputFileName) { }
+        public BaseProblem(SolutionMode mode)
+        {
+            switch (mode)
+            {
+                case SolutionMode.Small:
+                    SolvePuzzle(smallInputFileName, smallOutputFileName);
+                    break;
+                case SolutionMode.Large:
+                    SolvePuzzle(largeInputFileName, largeOutputFileName);
+                    break;
+                case SolutionMode.Both:
+                    SolvePuzzle(smallInputFileName, smallOutputFileName);
+                    SolvePuzzle(largeInputFileName, largeOutputFileName);
+                    break;
+                default:
+                    throw new NotSupportedException();
+            }
+        }
+
+        protected void SolvePuzzle(string inputFileName, string outputFileName)
+        {
+            RunSolution(inputFileName, outputFileName);
+        }
+
+        protected virtual void RunSolution(string inputFileName, string outputFileName) { }
 
         protected virtual void GetCases(string input) {
             DoCalculations();

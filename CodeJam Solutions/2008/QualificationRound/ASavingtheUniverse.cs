@@ -66,32 +66,11 @@ namespace CodeJam_Solutions._2008.QualificationRound
 
         List<EachCase> puzzleCases;
 
-        protected ASavingtheUniverse()
-        {
-            SolvePuzzle(smallInputFileName, smallOutputFileName);
-            SolvePuzzle(largeInputFileName, largeOutputFileName);
-        }
+        protected ASavingtheUniverse() : base() { }
 
-        public ASavingtheUniverse(SolutionMode mode)
-        {
-            switch (mode)
-            {
-                case SolutionMode.Small:
-                    SolvePuzzle(smallInputFileName, smallOutputFileName);
-                    break;
-                case SolutionMode.Large:
-                    SolvePuzzle(largeInputFileName, largeOutputFileName);
-                    break;
-                case SolutionMode.Both:
-                    SolvePuzzle(smallInputFileName, smallOutputFileName);
-                    SolvePuzzle(largeInputFileName, largeOutputFileName);
-                    break;
-                default:
-                    throw new NotSupportedException();
-            }
-        }
+        public ASavingtheUniverse(SolutionMode mode) : base(mode) { }
 
-        protected override void LoadInputData(string inputFileName, string outputFileName)
+        protected override void RunSolution(string inputFileName, string outputFileName)
         {
             relativePath = GetCallingMethodPath();
             puzzleCases = new List<EachCase>();
