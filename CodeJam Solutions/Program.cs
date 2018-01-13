@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CodeJam_Solutions._2008.QualificationRound;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,9 @@ namespace CodeJam_Solutions
     {
         static void Main(string[] args)
         {
+            ASavingtheUniverse aSavingtheUniverse = new ASavingtheUniverse(Util.SolutionMode.Both);
+
+            Console.ReadLine();
         }
     }
 }

@@ -259,3 +259,6 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+
+CodeJam Solutions/bin
+CodeJam Solutions/obj
