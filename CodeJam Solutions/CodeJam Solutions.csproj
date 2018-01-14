@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="2008\QualificationRound\ASavingtheUniverse.cs" />
+    <Compile Include="2008\QualificationRound\BTrainTimetable.cs" />
     <Compile Include="Base\BaseProblem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -60,6 +61,18 @@
     </None>
     <None Include="2008\QualificationRound\Data\A-small-practice.out">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="2008\QualificationRound\Data\B-large-practice.in">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="2008\QualificationRound\Data\B-large-practice.out">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="2008\QualificationRound\Data\B-small-practice.in">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="2008\QualificationRound\Data\B-small-practice.out">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="App.config" />
   </ItemGroup>

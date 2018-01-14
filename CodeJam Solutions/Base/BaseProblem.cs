@@ -8,15 +8,33 @@ using System.Threading.Tasks;
 
 namespace CodeJam_Solutions.Base
 {
-    public abstract class BaseProblem
+    public abstract class IndividualCase
     {
-        protected const string smallInputFileName = "A-small-practice.in";
-        protected const string largeInputFileName = "A-large-practice.in";
+        public abstract void ProcessCase();
+        public virtual string OutputCase()
+        {
+            return string.Empty;
+        }
 
-        protected const string smallOutputFileName = "A-small-practice.out";
-        protected const string largeOutputFileName = "A-large-practice.out";
+        public virtual string OutputCaseDesc()
+        {
+            return string.Empty;
+        }
+    }
+
+    public abstract class BaseProblem<T> where T: IndividualCase
+    {
+        #region Local variables
+        protected virtual string smallInputFileName => "";
+        protected virtual string largeInputFileName => "";
+
+        protected virtual string smallOutputFileName => "";
+        protected virtual string largeOutputFileName => "";
 
         protected string relativePath;
+
+        protected List<T> puzzleCases;
+        #endregion
 
         public BaseProblem()
         {
@@ -48,17 +66,39 @@ namespace CodeJam_Solutions.Base
             RunSolution(inputFileName, outputFileName);
         }
 
-        protected virtual void RunSolution(string inputFileName, string outputFileName) { }
+        protected virtual void RunSolution(string inputFileName, string outputFileName) {
+            puzzleCases = new List<T>();
+            GetCases(Path.Combine(relativePath, inputFileName));
+            OutputData(Path.Combine(relativePath, outputFileName));
+            puzzleCases = null;
+        }
 
         protected virtual void GetCases(string input) {
             DoCalculations();
         }
 
-        protected virtual void DoCalculations() {
-            OutputData(string.Empty);
+        protected void DoCalculations() {
+            foreach (var c in puzzleCases.Select((val, i) => new { i, val }))
+            {
+                c.val.ProcessCase();
+            }
         }
 
-        protected virtual void OutputData(string outputPath) { }
+        protected virtual void OutputData(string outputPath) {
+            using (var sw = new StreamWriter(outputPath))
+            {
+                Func<int, Func<string>, string> outputter = (index, outputFormat) =>
+                {
+                    return $"Case #{index + 1}: {outputFormat()}";
+                };
+
+                foreach (var c in puzzleCases.Select((val, i) => new { i, val }))
+                {
+                    Console.WriteLine(outputter(c.i, c.val.OutputCaseDesc));
+                    sw.WriteLine(outputter(c.i, c.val.OutputCase));
+                }
+            }
+        }
 
 
 

@@ -30,55 +30,24 @@ namespace CodeJam_Solutions._2008.QualificationRound
     ///2 ≤ S ≤ 100
     ///0 ≤ Q ≤ 1000    
     /// </summary>
-    public class ASavingtheUniverse : Base.BaseProblem
+    public class ASavingtheUniverse : Base.BaseProblem<SavingUniverseCase>
     {
-        private class EachCase
-        {
-            public EachCase() { }
-            public IEnumerable<string> Queries;
-            public Int16 ServersCount;
 
-            public void ProcessCase()
-            {
-                if (Queries.Count() == 0 || Queries.Count() == 1)
-                {
-                    return; //default Output = 0 will be used.
-                }
+        protected override string smallInputFileName => "A-small-practice.in";
+        protected override string largeInputFileName => "A-large-practice.in";
 
-                HashSet<string> querySet = new HashSet<string>();
+        protected override string smallOutputFileName => "A-small-practice.out";
+        protected override string largeOutputFileName => "A-large-practice.out";
 
-                foreach (var q in Queries)
-                {
-                    if (!querySet.Contains(q))
-                    {
-                        if (querySet.Count == ServersCount - 1)
-                        {
-                            Output++;
-                            querySet = new HashSet<string>();
-                        }
-                        querySet.Add(q);
-                    }
-                }
-            }
-
-            public int Output { get; set; } = 0;
-        }
-
-        List<EachCase> puzzleCases;
-
-        protected ASavingtheUniverse() : base() { }
+        public ASavingtheUniverse() : base() { }
 
         public ASavingtheUniverse(SolutionMode mode) : base(mode) { }
 
         protected override void RunSolution(string inputFileName, string outputFileName)
         {
             relativePath = GetCallingMethodPath();
-            puzzleCases = new List<EachCase>();
-            GetCases(Path.Combine(relativePath, inputFileName));
-            OutputData(Path.Combine(relativePath, outputFileName));
-            puzzleCases = null;
+            base.RunSolution(inputFileName, outputFileName);
         }
-
 
         protected override void GetCases(string input)
         {
@@ -104,7 +73,7 @@ namespace CodeJam_Solutions._2008.QualificationRound
                 Int16 NCases = Convert.ToInt16(sr.ReadLine());
                 for (int i = 0; i < NCases; i++)
                 {
-                    var newCase = new EachCase();
+                    var newCase = new SavingUniverseCase();
                     newCase.ServersCount = Convert.ToInt16(sr.ReadLine());
                     getLines(sr, newCase.ServersCount);  //ignore server names as it will not be required in the solution.
 
@@ -115,27 +84,49 @@ namespace CodeJam_Solutions._2008.QualificationRound
                 }
             }
 
-            DoCalculations();
+            base.GetCases(input);
         }
+    }
 
-        protected override void DoCalculations()
+    public class SavingUniverseCase : IndividualCase
+    {
+        public SavingUniverseCase() { }
+        public IEnumerable<string> Queries;
+        public Int16 ServersCount;
+
+        public override void ProcessCase()
         {
-            foreach (var c in puzzleCases.Select((val, i) => new { i, val }))
+            if (Queries.Count() == 0 || Queries.Count() == 1)
             {
-                c.val.ProcessCase();
+                return; //default Output = 0 will be used.
             }
-        }
 
-        protected override void OutputData(string outputPath)
-        {
-            using (var sw = new StreamWriter(outputPath))
+            HashSet<string> querySet = new HashSet<string>();
+
+            foreach (var q in Queries)
             {
-                foreach (var c in puzzleCases.Select((val, i) => new { i, val }))
+                if (!querySet.Contains(q))
                 {
-                    Console.WriteLine($"Case #{c.i + 1}: {c.val.Output}");
-                    sw.WriteLine($"Case #{c.i + 1}: {c.val.Output}");
+                    if (querySet.Count == ServersCount - 1)
+                    {
+                        Output++;
+                        querySet = new HashSet<string>();
+                    }
+                    querySet.Add(q);
                 }
             }
         }
+
+        public override string OutputCase()
+        {
+            return $"{Output}";
+        }
+
+        public override string OutputCaseDesc()
+        {
+            return OutputCase();
+        }
+
+        public int Output { get; set; } = 0;
     }
 }
