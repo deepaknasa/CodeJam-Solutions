@@ -34,6 +34,7 @@ namespace CodeJam_Solutions.Base
         protected string relativePath;
 
         protected List<T> puzzleCases;
+        protected virtual bool showOutputDescription => true;
         #endregion
 
         public BaseProblem()
@@ -94,7 +95,10 @@ namespace CodeJam_Solutions.Base
 
                 foreach (var c in puzzleCases.Select((val, i) => new { i, val }))
                 {
-                    Console.WriteLine(outputter(c.i, c.val.OutputCaseDesc));
+                    if (showOutputDescription)
+                    {
+                        Console.WriteLine(outputter(c.i, c.val.OutputCaseDesc));
+                    }
                     sw.WriteLine(outputter(c.i, c.val.OutputCase));
                 }
             }

@@ -38,6 +38,7 @@ namespace CodeJam_Solutions._2008.QualificationRound
 
         protected override string smallOutputFileName => "B-small-practice.out";
         protected override string largeOutputFileName => "B-large-practice.out";
+        protected override bool showOutputDescription => false;
 
         protected override void RunSolution(string inputFileName, string outputFileName)
         {
