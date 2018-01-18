@@ -8,6 +8,22 @@ using System.Threading.Tasks;
 
 namespace CodeJam_Solutions.Base
 {
+    public class ExecutionBase : IDisposable
+    {
+        Stopwatch watch;
+
+        public ExecutionBase()
+        {
+            watch = Stopwatch.StartNew();
+        }
+
+        public void Dispose()
+        {
+            watch.Stop();
+            Console.WriteLine($"Program took {watch.ElapsedMilliseconds}ms");
+        }
+    }
+
     public abstract class IndividualCase
     {
         public abstract void ProcessCase();
@@ -22,7 +38,7 @@ namespace CodeJam_Solutions.Base
         }
     }
 
-    public abstract class BaseProblem<T> where T: IndividualCase
+    public abstract class BaseProblem<T>: ExecutionBase where T: IndividualCase 
     {
         #region Local variables
         protected virtual string smallInputFileName => "";
@@ -37,10 +53,8 @@ namespace CodeJam_Solutions.Base
         protected virtual bool showOutputDescription => true;
         #endregion
 
-        public BaseProblem()
+        public BaseProblem(): this(SolutionMode.Both)
         {
-            SolvePuzzle(smallInputFileName, smallOutputFileName);
-            SolvePuzzle(largeInputFileName, largeOutputFileName);
         }
 
         public BaseProblem(SolutionMode mode)
@@ -85,7 +99,7 @@ namespace CodeJam_Solutions.Base
             }
         }
 
-        protected virtual void OutputData(string outputPath) {
+        protected void OutputData(string outputPath) {
             using (var sw = new StreamWriter(outputPath))
             {
                 Func<int, Func<string>, string> outputter = (index, outputFormat) =>
