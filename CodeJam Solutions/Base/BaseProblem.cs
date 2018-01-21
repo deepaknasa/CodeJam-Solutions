@@ -20,7 +20,7 @@ namespace CodeJam_Solutions.Base
         public void Dispose()
         {
             watch.Stop();
-            Console.WriteLine($"Program took {watch.ElapsedMilliseconds}ms");
+            Console.WriteLine($"\n************************************************Program took {watch.ElapsedMilliseconds}ms*******************************");
         }
     }
 
@@ -41,11 +41,11 @@ namespace CodeJam_Solutions.Base
     public abstract class BaseProblem<T>: ExecutionBase where T: IndividualCase 
     {
         #region Local variables
-        protected virtual string smallInputFileName => "";
-        protected virtual string largeInputFileName => "";
+        protected virtual string smallInputFileName => "-small-practice.in";
+        protected virtual string largeInputFileName => "-large-practice.in";
 
-        protected virtual string smallOutputFileName => "";
-        protected virtual string largeOutputFileName => "";
+        protected virtual string smallOutputFileName => "-small-practice.out";
+        protected virtual string largeOutputFileName => "-large-practice.out";
 
         protected string relativePath;
 

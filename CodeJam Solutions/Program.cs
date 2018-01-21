@@ -19,11 +19,8 @@ namespace CodeJam_Solutions
             //ASavingtheUniverse aSavingtheUniverse = new ASavingtheUniverse();
             //BTrainTimetable bTrainTimetable = new BTrainTimetable();
             //using (CFlySwatter cSkySwatter = new CFlySwatter(SolutionMode.Small)) { }
-            //using (CFlySwatter cSkySwatter = new CFlySwatter(SolutionMode.Large)) { }
-
-            using (AMinimumScalarProduct minScaler = new AMinimumScalarProduct(SolutionMode.Both)) { }
-
-            Console.ReadLine();
+            //using (AMinimumScalarProduct minScaler = new AMinimumScalarProduct(SolutionMode.Both)) { }
+            using (BMilkshakes shakes = new BMilkshakes(SolutionMode.Small)) { }
         }
     }
 }

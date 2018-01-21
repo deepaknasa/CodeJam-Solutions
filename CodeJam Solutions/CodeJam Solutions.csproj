@@ -46,6 +46,7 @@
     <Compile Include="2008\QualificationRound\BTrainTimetable.cs" />
     <Compile Include="2008\QualificationRound\CFlySwatter.cs" />
     <Compile Include="2008\Round1A\AMinimumScalarProduct.cs" />
+    <Compile Include="2008\Round1A\BMilkshakes.cs" />
     <Compile Include="Base\BaseProblem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -67,13 +68,7 @@
     <None Include="2008\QualificationRound\Data\B-large-practice.in">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="2008\QualificationRound\Data\B-large-practice.out">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="2008\QualificationRound\Data\B-small-practice.in">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="2008\QualificationRound\Data\B-small-practice.out">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="2008\QualificationRound\Data\C-large-practice.in">
@@ -96,6 +91,14 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="2008\Round1A\Data\A-small-practice.out" />
+    <None Include="2008\Round1A\Data\B-large-practice.in">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="2008\Round1A\Data\B-large-practice.out" />
+    <None Include="2008\Round1A\Data\B-small-practice.in">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="2008\Round1A\Data\B-small-practice.out" />
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />

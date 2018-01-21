@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +10,40 @@ namespace CodeJam_Solutions.Util
 {
     public static class Helper
     {
+        public static List<string> GetLines(this StreamReader stream, int noOfLines)
+        {
+            List<string> result = new List<string>();
+            for (int i = 0; i < noOfLines; i++)
+            {
+                if (stream.Peek() >= 0)
+                {
+                    result.Add(stream.ReadLine());
+                }
+                else
+                {
+                    return result;
+                }
+            }
+            return result;
+        }
 
+        public static int ToInt(this string str)
+        {
+            return Convert.ToInt32(str);
+        }
+
+        public static bool ToBool(this string str)
+        {
+            if (str.Equals("0"))
+            {
+                return false;
+            }
+            else if (str.Equals("1"))
+            {
+                return true;
+            }
+            return Convert.ToBoolean(str);
+        }
     }
 
 
