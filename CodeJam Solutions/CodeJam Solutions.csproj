@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,6 +48,7 @@
     <Compile Include="2008\QualificationRound\CFlySwatter.cs" />
     <Compile Include="2008\Round1A\AMinimumScalarProduct.cs" />
     <Compile Include="2008\Round1A\BMilkshakes.cs" />
+    <Compile Include="2008\Round1A\CNumbers.cs" />
     <Compile Include="Base\BaseProblem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -99,6 +101,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="2008\Round1A\Data\B-small-practice.out" />
+    <None Include="2008\Round1A\Data\C-large-practice.in">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="2008\Round1A\Data\C-small-practice.in">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />

@@ -20,7 +20,8 @@ namespace CodeJam_Solutions
             //BTrainTimetable bTrainTimetable = new BTrainTimetable();
             //using (CFlySwatter cSkySwatter = new CFlySwatter(SolutionMode.Small)) { }
             //using (AMinimumScalarProduct minScaler = new AMinimumScalarProduct(SolutionMode.Both)) { }
-            using (BMilkshakes shakes = new BMilkshakes(SolutionMode.Small)) { }
+            //using (BMilkshakes shakes = new BMilkshakes(SolutionMode.Small)) { }
+            using (CNumbers num = new CNumbers(SolutionMode.Large)) { }
         }
     }
 }
