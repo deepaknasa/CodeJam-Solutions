@@ -96,6 +96,7 @@ namespace CodeJam_Solutions.Base
             foreach (var c in puzzleCases.Select((val, i) => new { i, val }))
             {
                 c.val.ProcessCase();
+                Console.WriteLine("Case #{0} Result {1}", c.i + 1, c.val.OutputCase());
             }
         }
 

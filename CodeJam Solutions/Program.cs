@@ -1,12 +1,5 @@
-﻿using CodeJam_Solutions._2008.QualificationRound;
-using CodeJam_Solutions._2008.Round1A;
+﻿using CodeJam_Solutions._2008.Round1B;
 using CodeJam_Solutions.Base;
-using CodeJam_Solutions.Util;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CodeJam_Solutions
 {
@@ -21,7 +14,8 @@ namespace CodeJam_Solutions
             //using (CFlySwatter cSkySwatter = new CFlySwatter(SolutionMode.Small)) { }
             //using (AMinimumScalarProduct minScaler = new AMinimumScalarProduct(SolutionMode.Both)) { }
             //using (BMilkshakes shakes = new BMilkshakes(SolutionMode.Small)) { }
-            using (CNumbers num = new CNumbers(SolutionMode.Large)) { }
+            //using (CNumbers num = new CNumbers(SolutionMode.Large)) { }
+            using (ACropTriangles num = new ACropTriangles(SolutionMode.Both)) { }
         }
     }
 }

@@ -49,6 +49,7 @@
     <Compile Include="2008\Round1A\AMinimumScalarProduct.cs" />
     <Compile Include="2008\Round1A\BMilkshakes.cs" />
     <Compile Include="2008\Round1A\CNumbers.cs" />
+    <Compile Include="2008\Round1B\ACropTriangles.cs" />
     <Compile Include="Base\BaseProblem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -104,9 +105,35 @@
     <None Include="2008\Round1A\Data\C-large-practice.in">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="2008\Round1A\Data\C-large-practice.out" />
     <None Include="2008\Round1A\Data\C-small-practice.in">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="2008\Round1A\Data\C-small-practice.out" />
+    <None Include="2008\Round1B\Data\A-large-practice.in">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="2008\Round1B\Data\A-large-practice.out" />
+    <None Include="2008\Round1B\Data\A-small-practice.in">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="2008\Round1B\Data\A-small-practice.out" />
+    <None Include="2008\Round1B\Data\B-large-practice.in">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="2008\Round1B\Data\B-large-practice.out" />
+    <None Include="2008\Round1B\Data\B-small-practice.in">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="2008\Round1B\Data\B-small-practice.out" />
+    <None Include="2008\Round1B\Data\C-large-practice.in">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="2008\Round1B\Data\C-large-practice.out" />
+    <None Include="2008\Round1B\Data\C-small-practice.in">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="2008\Round1B\Data\C-small-practice.out" />
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />

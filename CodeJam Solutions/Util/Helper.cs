@@ -32,6 +32,11 @@ namespace CodeJam_Solutions.Util
             return Convert.ToInt32(str);
         }
 
+        public static UInt64 ToUInt64(this string str)
+        {
+            return Convert.ToUInt64(str);
+        }
+
         public static bool ToBool(this string str)
         {
             if (str.Equals("0"))
