@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -104,6 +105,74 @@ namespace CodeJam_Solutions.Util
             }
 
 
+        }
+    }
+
+    public class Node<T>
+    {
+        private T data;
+        private NodeList<T> children;
+
+        public Node()
+        {
+            data = default(T);
+            children = null;
+        }
+
+        public Node(T data): this(data, null)
+        {
+            this.data = data;
+        }
+
+        public Node(T data, NodeList<T> children)
+        {
+            this.data = data;
+            this.children = children;
+        }
+
+        public T Value
+        {
+            get
+            {
+                return data;
+            }
+            set
+            {
+                data = value;
+            }
+        }
+
+        public NodeList<T> Children
+        {
+            get
+            {
+                return children;
+            }
+            set
+            {
+                children = value;
+            }
+        }
+    }
+
+    public class NodeList<T>: Collection<Node<T>>
+    {
+        public NodeList(): base() { }
+
+        public NodeList(int size)
+        {
+            for (int i = 0; i < size; i++)
+            {
+                base.Items.Add(default(Node<T>));
+            }
+        }
+
+        public Node<T> FindByValue(T value)
+        {
+            foreach (var node in base.Items)
+                if (node.Value.Equals(value)) return node;
+
+            return null;
         }
     }
 }

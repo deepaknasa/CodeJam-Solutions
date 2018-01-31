@@ -15,7 +15,8 @@ namespace CodeJam_Solutions
             //using (AMinimumScalarProduct minScaler = new AMinimumScalarProduct(SolutionMode.Both)) { }
             //using (BMilkshakes shakes = new BMilkshakes(SolutionMode.Small)) { }
             //using (CNumbers num = new CNumbers(SolutionMode.Large)) { }
-            using (ACropTriangles num = new ACropTriangles(SolutionMode.Both)) { }
+            //using (ACropTriangles num = new ACropTriangles(SolutionMode.Both)) { }
+            using (BNumberSets num = new BNumberSets(SolutionMode.Large)) { }
         }
     }
 }

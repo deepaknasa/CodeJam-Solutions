@@ -50,6 +50,7 @@
     <Compile Include="2008\Round1A\BMilkshakes.cs" />
     <Compile Include="2008\Round1A\CNumbers.cs" />
     <Compile Include="2008\Round1B\ACropTriangles.cs" />
+    <Compile Include="2008\Round1B\BNumberSets.cs" />
     <Compile Include="Base\BaseProblem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
