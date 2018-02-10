@@ -16,7 +16,8 @@ namespace CodeJam_Solutions
             //using (BMilkshakes shakes = new BMilkshakes(SolutionMode.Small)) { }
             //using (CNumbers num = new CNumbers(SolutionMode.Large)) { }
             //using (ACropTriangles num = new ACropTriangles(SolutionMode.Both)) { }
-            using (BNumberSets num = new BNumberSets(SolutionMode.Large)) { }
+            //using (BNumberSets num = new BNumberSets(SolutionMode.Large)) { }
+            using (CMousetrap test = new CMousetrap(SolutionMode.Both)) { }
         }
     }
 }

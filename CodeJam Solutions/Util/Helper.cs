@@ -38,6 +38,11 @@ namespace CodeJam_Solutions.Util
             return Convert.ToUInt64(str);
         }
 
+        public static long ToLong(this string str)
+        {
+            return long.Parse(str);
+        }
+
         public static bool ToBool(this string str)
         {
             if (str.Equals("0"))
