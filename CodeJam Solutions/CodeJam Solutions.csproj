@@ -52,6 +52,7 @@
     <Compile Include="2008\Round1B\ACropTriangles.cs" />
     <Compile Include="2008\Round1B\BNumberSets.cs" />
     <Compile Include="2008\Round1B\CMousetrap.cs" />
+    <Compile Include="2008\Round1C\CIncreasingSpeedLimits.cs" />
     <Compile Include="Base\BaseProblem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -136,6 +137,18 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="2008\Round1B\Data\C-small-practice.out" />
+    <None Include="2008\Round1C\Data\C-large-practice.in">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="2008\Round1C\Data\C-large-practice.out">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="2008\Round1C\Data\C-small-practice.in">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="2008\Round1C\Data\C-small-practice.out">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />

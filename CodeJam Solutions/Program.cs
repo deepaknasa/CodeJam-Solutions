@@ -1,4 +1,5 @@
 ﻿using CodeJam_Solutions._2008.Round1B;
+using CodeJam_Solutions._2008.Round1C;
 using CodeJam_Solutions.Base;
 
 namespace CodeJam_Solutions
@@ -17,7 +18,8 @@ namespace CodeJam_Solutions
             //using (CNumbers num = new CNumbers(SolutionMode.Large)) { }
             //using (ACropTriangles num = new ACropTriangles(SolutionMode.Both)) { }
             //using (BNumberSets num = new BNumberSets(SolutionMode.Large)) { }
-            using (CMousetrap test = new CMousetrap(SolutionMode.Both)) { }
+            //using (CMousetrap test = new CMousetrap(SolutionMode.Both)) { }
+            using (var test = new CIncreasingSpeedLimits(SolutionMode.Large)) { }
         }
     }
 }
