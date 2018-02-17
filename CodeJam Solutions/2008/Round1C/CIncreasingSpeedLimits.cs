@@ -40,68 +40,6 @@ namespace CodeJam_Solutions._2008.Round1C
             Result = fasterSolution();
         }
 
-        class Node
-        {
-            public Node(long num, long pos)
-            {
-                left = null;
-                right = null;
-                sum = 1L;
-                number = num;
-                position = pos;
-            }
-
-            public Node left;
-            public Node right;
-            public long sum;
-            public long number;
-            public long position;
-
-            public void insert(Node child)
-            {
-                //if (child.number == number)
-                //{
-                //    if (right == null)
-                //        right = child;
-                //    else
-                //        right.insert(child);
-                //}
-
-                if (child.number >= number)
-                {
-                    if (right == null)
-                        right = child;
-                    else
-                        right.insert(child);
-                }
-                else
-                {
-                    if (left == null)
-                        left = child;
-                    else
-                        left.insert(child);
-                }
-            }
-
-            internal long getSum(long num, long pos)
-            {
-                if (num >= this.number || this.position < pos)
-                {
-                    if (right == null)
-                    {
-                        sum = 1;
-                        return sum;
-                    }
-                    return right.getSum(num, pos);
-                }
-                else if (this.position > pos)
-                {
-                    return sum;
-                }
-                return 0;
-            }
-        }
-
         long fasterSolution()
         {
             long[] e = (long[])intervals.Clone();
