@@ -42,76 +42,61 @@ namespace CodeJam_Solutions._2008.Round1C
 
         long fasterSolution()
         {
-            long[] e = (long[])intervals.Clone();
-            Array.Sort(e);
+            long[] sortedIntervals = (long[])intervals.Clone();
+            Array.Sort(sortedIntervals);
             long[] f = new long[n];
             int fc = 0;
             for (int i = 0; i < n; i++)
             {
-                if (i == 0 || e[i] > e[i - 1])
-                    f[fc++] = e[i];
+                if (i == 0 || sortedIntervals[i] > sortedIntervals[i - 1])
+                    f[fc++] = sortedIntervals[i];
             }
 
-            FenvickTree ft = new FenvickTree(fc);
+            FenwickTree ft = new FenwickTree(fc);
 
             for (int i = 0; i < n; i++)
             {
                 int r = 1;
-                //int j = Arrays.binarySearch(f, 0, fc, d[i]);
                 int j = Array.BinarySearch(f, 0, fc, intervals[i]);
-                if (j > 0)
-                    r = (r + ft.sumt(j - 1)) % 1000000007;
-                ft.add(j, r);
+                j += 1;
+                if (j > 1)
+                    r = (r + ft.Sum(j - 1)) % 1000000007;
+                ft.AddValue(j, r);
             }
-
-            Result = ft.sumt(fc - 1);
-
-            //Node root = new Node(intervals[0], 1);
-            //for (int i = 1; i < n; i++)
-            //{
-            //    Node child = new Node(intervals[i], i + 1);
-            //    root.insert(child);
-            //}
-
-            //for (long i = (n - 1); i >= 0; i--)
-            //{
-            //    long sum = root.getSum(intervals[i], i + 1) + 1;
-            //    Result = (sum + Result) % 1000000007;
-            //}
-
-            return Result;
+            return ft.Sum(fc);
         }
 
-        class FenvickTree
+        class FenwickTree
         {
             int n;
             int[] a;
 
-            public FenvickTree(int n)
+            public FenwickTree(int n)
             {
+                n += 1;
                 this.n = n;
                 a = new int[n];
             }
 
-            // Returns sum of elements in range [0, i];
-            public int sumt(int i)
+            // Returns sum of elements in range [1, i];
+            public int Sum(int i)
             {
                 int res = 0;
-                while (i >= 0)
+                while (i > 0)
                 {
                     res = (res + a[i]) % 1000000007;
-                    i = (i & (i + 1)) - 1;
+                    i -= i & (-i);
                 }
                 return res;
             }
 
             // Adds x to the i-th element
-            public void add(int i, int x)
+            public void AddValue(int i, int x)
             {
                 while (i < n)
                 {
                     a[i] = (a[i] + x) % 1000000007;
-                    i = i | (i + 1);
+                    i += i & (-i);
                 }
             }
         }
