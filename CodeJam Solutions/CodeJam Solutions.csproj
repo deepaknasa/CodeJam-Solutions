@@ -52,7 +52,9 @@
     <Compile Include="2008\Round1B\ACropTriangles.cs" />
     <Compile Include="2008\Round1B\BNumberSets.cs" />
     <Compile Include="2008\Round1B\CMousetrap.cs" />
+    <Compile Include="2008\Round1C\BUglyNumbers.cs" />
     <Compile Include="2008\Round1C\CIncreasingSpeedLimits.cs" />
+    <Compile Include="2009\QualificationRound\AAlienLanguage.cs" />
     <Compile Include="Base\BaseProblem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -137,6 +139,14 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="2008\Round1B\Data\C-small-practice.out" />
+    <None Include="2008\Round1C\Data\B-large-practice.in">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="2008\Round1C\Data\B-large-practice.out" />
+    <None Include="2008\Round1C\Data\B-small-practice.in">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="2008\Round1C\Data\B-small-practice.out" />
     <None Include="2008\Round1C\Data\C-large-practice.in">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -147,6 +157,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="2008\Round1C\Data\C-small-practice.out">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="2009\QualificationRound\A-large-practice.in">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="2009\QualificationRound\A-small-practice.in">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="App.config" />
