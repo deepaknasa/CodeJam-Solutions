@@ -55,6 +55,7 @@
     <Compile Include="2008\Round1C\BUglyNumbers.cs" />
     <Compile Include="2008\Round1C\CIncreasingSpeedLimits.cs" />
     <Compile Include="2009\QualificationRound\AAlienLanguage.cs" />
+    <Compile Include="2009\QualificationRound\BWatersheds.cs" />
     <Compile Include="Base\BaseProblem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
