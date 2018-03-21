@@ -163,6 +163,9 @@
     <None Include="2009\QualificationRound\A-large-practice.in">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="2009\QualificationRound\B-small-practice.in">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="2009\QualificationRound\A-small-practice.in">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
